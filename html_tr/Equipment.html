@@ -1,0 +1,116 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head><body id="main" class="Laskuri">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <!--classin, patternin ja palikoiden valinta-->
+          <div class="col-md-4" id="Input">
+            <h2>Select class</h2>
+            <br>
+            <div class="btn-group btn-group-lg">
+              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Class <span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="#">Assassin</a>
+                </li>
+                <li>
+                  <a href="#">Avenger</a>
+                </li>
+                <li>
+                  <a href="#">Bardr</a>
+                </li>
+                <li>
+                  <a href="#">Conjurer</a>
+                </li>
+                <li>
+                  <a href="#">Druid</a>
+                </li>
+                <li>
+                  <a href="#">Enchanter</a>
+                </li>
+                <li>
+                  <a href="#">Healer</a>
+                </li>
+                <li>
+                  <a href="#">Inquisitor</a>
+                </li>
+                <li>
+                  <a href="#">Necromancer</a>
+                </li>
+                <li>
+                  <a href="#">Paladin</a>
+                </li>
+                <li>
+                  <a href="#">Ranger</a>
+                </li>
+                <li>
+                  <a href="#">Rogue</a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+              </ul>
+            </div>
+            <br>
+            <h2>Select Pattern</h2>
+            <div class="btn-group btn-group-lg">
+              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Pattern <span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="#">Silk</a>
+                </li>
+                <li>
+                  <a href="#"> Suede </a>
+                </li>
+                <li>
+                  <a href="#"> Leather</a>
+                </li>
+              </ul>
+            </div>
+            <!-- input end -->
+          </div>
+          <!-- Skill list -->
+          <div class="col-md-4">
+            <ul class="list-group borderless">
+              <li class="list-group-item">Execute
+                <a href="#"><i class="fa fa-2x fa-fw fa-plus-square-o"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw -square-o fa-minus-square-o"></i></a>
+              </li>
+              <li class="list-group-item">Backstab
+                <a href="#"><i class="fa fa-2x fa-fw fa-plus-square-o"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw -square-o fa-minus-square-o"></i></a>
+              </li>
+              <li class="list-group-item">Circle
+                <a href="#"><i class="fa fa-2x fa-fw fa-plus-square-o"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw -square-o fa-minus-square-o"></i></a>
+              </li>
+            </ul>
+          </div>
+          <!-- Korissa olevan itemit ja yhteenlaskettu limitti-->
+          <div class="col-md-4" id="Output">
+            <div class="well">
+              <h2>Basket</h2>
+              <ul class="list-group">
+                <li class="list-group-item">3 Execute</li>
+                <li class="list-group-item">6 Circle</li>
+                <li class="list-group-item">4 Backstab</li>
+              </ul>
+            </div>
+            <br>
+            <div class="well" id="basket-total">
+              <h4>Cost:</h4>
+              <li class="list-group-item" id="total">120</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
