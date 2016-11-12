@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
+import {Grid, Row, Col, Jumbotron, ListGroup, ListGroupItem, Button, Glyphicon, Well, Badge, ProgressBar} from 'react-bootstrap';
 import ClassMenu from './ClassMenu.js'
 import './App.css';
 
@@ -38,7 +38,7 @@ class App extends Component {
             //
             // Jumbotronistakin voisi tehdä oman tiedostonsa, jos haluaisi.
             */
-    
+    const now = 200;
     return (
       <Grid>
         <Row>
@@ -46,7 +46,7 @@ class App extends Component {
             <h1>Imperial Custom Eq Workshop</h1>
           </Jumbotron>
         </Row>
-        
+        {/* Classin & patternin valinta*/}
         <Row>
             <Col md={4}>
             {this.state.selectDone === false ?
@@ -61,16 +61,46 @@ class App extends Component {
         </select>
           </Col>
         
-        
+        {/*Trinkettien listaus*/}
           <Col md={4}> 
+		  <h2>Trinkets</h2>
              {this.state.selectDone === false ?
             
             <div></div> :
-              <p>Tänne ilmestyy skillssit, kun on valittu classi</p>
+              
+			<div>
+				
+			 <ListGroup>
+				<ListGroupItem> Critical Attack <Button BsSize="xsmall"><Glyphicon glyph="minus" /></Button>
+				<Button BsSize="xsmall"><Glyphicon glyph="plus" /></Button>
+				</ListGroupItem>
+				<ListGroupItem> Disembowel <Button BsSize="xsmall"><Glyphicon glyph="minus" /></Button>
+				<Button BsSize="xsmall"><Glyphicon glyph="plus" /></Button>
+				</ListGroupItem>
+			  </ListGroup>
+			  </div>
             }
           </Col>
           <Col md={4}>
-            <p>Täällä on basket</p>
+            <h2>Basket</h2>
+			<div>
+			
+			<Well>
+			{this.state.selectDone === false ?
+            
+            <div></div> :
+			<ListGroup>
+				<ListGroupItem>Critical Attack <Badge>2</Badge></ListGroupItem>
+				<ListGroupItem>Parry <Badge>6</Badge></ListGroupItem>
+			</ListGroup>
+			
+			}
+			</Well>
+			<div>
+			<ProgressBar max="400" now={now} label={`${now}`} />
+			</div>
+			
+			</div>
           </Col>
         </Row>
       </Grid>
