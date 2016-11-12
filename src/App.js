@@ -46,16 +46,26 @@ class App extends Component {
             <h1>Imperial Custom Eq Workshop</h1>
           </Jumbotron>
         </Row>
+        
         <Row>
-          <Col md={4}>
+            <Col md={4}>
             {this.state.selectDone === false ?
               <ClassMenu handleChange={this.handleChange} /> :
               <h2>{this.state.selectedClass}</h2>
             }
+        <h2>Select a pattern</h2>
+        <select required>
+            <option value="silk">Silk</option>
+            <option value="suede">Suede</option>
+            <option value="leather">Leather</option>
+        </select>
           </Col>
-          <Col md={4}>
+        
+        
+          <Col md={4}> 
              {this.state.selectDone === false ?
-              <div></div> :
+            
+            <div></div> :
               <p>Tänne ilmestyy skillssit, kun on valittu classi</p>
             }
           </Col>
