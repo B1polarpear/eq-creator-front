@@ -8,7 +8,8 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+  
+    /* STATE */
     this.state = {
       selectedClass: "",
       classDone: false,
@@ -18,11 +19,12 @@ class App extends Component {
       basket: [],
       skillList: []
     };
-    
+  
     this.handleChange = this.handleChange.bind(this);
     this.getPatternStats = this.getPatternStats.bind(this);
   }
   
+  /* Function for events */
   handleChange(e) {
     if (e.target.id === "class") {
       this.setState(
@@ -39,33 +41,22 @@ class App extends Component {
     }
   }
   
+  /* Function for fetching pattern stats on class/pattern choice */
   getPatternStats(id) {
-    console.log("function rullz: " + id);
     let stats = [];
     let patternData = getPatterns();
-    let juu = this.state.selectedClass;
-    console.log(juu)
+    let classNameValue = this.state.selectedClass;
     stats.push({id: id,
                 name: patternData[id].name,
                 ac: patternData[id].ac,
-                classCost: patternData[id].costs[juu]
+                classCost: patternData[id].costs[classNameValue]
     });
     this.setState({
       patternStats: stats
-    });
-  
-    
+    });      
   }
   
   render() {
-     /*
-            // JSX-tyyli: komponentille annetaan parametrina dataa ylhäältä
-            // ja tässä tapauksessa funktio renderöi näkyviin jotain datan
-            // perusteella. <ClassMenu ../> yms.
-            //
-            // Jumbotronistakin voisi tehdä oman tiedostonsa, jos haluaisi.
-            */
-
     return (
       <Grid>
         <Row>
@@ -73,8 +64,8 @@ class App extends Component {
             <h1>Imperial Custom Eq Workshop</h1>
           </Jumbotron>
         </Row>
-        {/* Classin & patternin valinta*/}
         <Row>
+            {/* Classin & patternin valinta*/}
             <Col md={4}>
               {this.state.classDone === false ?
                 <ClassMenu handleChange={this.handleChange} /> :
@@ -85,11 +76,10 @@ class App extends Component {
                 <h2>{this.state.patternStats[0].name} pattern ({this.state.patternStats[0].ac} AC)</h2>
               }
             </Col>
-        
-        {/*Trinkettien listaus*/}
-          <Col md={4}> 
-		  <h2>Available skills</h2>
-             {this.state.classDone && this.state.patternDone ?
+            {/*Trinkettien listaus*/}
+            <Col md={4}> 
+		          <h2>Available skills</h2>
+                {this.state.classDone && this.state.patternDone ?
             
               <div>
 				
