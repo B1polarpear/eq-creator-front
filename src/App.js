@@ -10,12 +10,13 @@ class App extends Component {
     super(props);
     
     this.state = {
-      basketValue: 0,
       selectedClass: "",
       classDone: false,
       patternDone: false,
       selectedPatternId: -1,
-      patternStats: []
+      patternStats: [],
+      basket: [],
+      skillList: []
     };
     
     this.handleChange = this.handleChange.bind(this);
@@ -125,7 +126,7 @@ class App extends Component {
 			}
 			</Well>
 			<div>
-			Total: {this.state.basketValue}
+			Total: 200
 			</div>
 			
 			</div>
