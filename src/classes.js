@@ -2,7 +2,7 @@
   Määritellään mahdolliset classit
 */
 
-export const CLASSES = [
+const CLASSES = [
   {name: "Avenger"},
   {name: "Paladin"},
   {name: "Ranger"}

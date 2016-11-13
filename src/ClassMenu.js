@@ -11,7 +11,7 @@ export default function ClassMenu(props) {
   */
   const classOptions = classList.map((a) => {
     return (
-        <option value={a.name} key={a.name}>{a.name}</option>
+        <option value={a.id} key={a.name} id="abc">{a.name}</option>
     );
   })
 
@@ -23,7 +23,8 @@ export default function ClassMenu(props) {
   return (
     <div>
       <h2>Select a class</h2>
-      <select className="form-control" onChange={props.handleChange}>
+      <select className="form-control" id="class" onChange={props.handleChange}>
+        <option>Choose...</option>
         {classOptions}
       </select>
     </div>   
